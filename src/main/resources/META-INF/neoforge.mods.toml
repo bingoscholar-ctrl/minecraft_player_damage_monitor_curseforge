@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="player_damage_udp"
+version="1.0.0"
+displayName="Player Damage UDP Monitor"
+description='''
+Server-side lightweight mod that emits player damage events as JSON over UDP.
+'''
+authors="YourName"
+
+[[dependencies.player_damage_udp]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="SERVER"
+
+[[dependencies.player_damage_udp]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.11,1.22)"
+ordering="NONE"
+side="SERVER"
