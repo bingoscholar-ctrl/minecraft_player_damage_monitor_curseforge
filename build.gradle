@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'net.neoforged.gradle.userdev' version '7.0.165'
+}
+
+group = 'com.example.damageudp'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+neoForge {
+    // 1.21.11 对应的 NeoForge 版本号请按官方 MDK 核对。
+    version = '21.1.111'
+
+    runs {
+        server {
+            server()
+            gameDirectory = project.file('run/server')
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
